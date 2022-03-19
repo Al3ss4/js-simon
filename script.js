@@ -14,8 +14,11 @@ function generateRandomNumber( min , max ) {
 
 
  //array vuoto nel quale verranno inseriti i numeri random 
- generatoreNumeriRandom=[];
- numeriIseritiUtente=[];
+let generatoreNumeriRandom=[];
+let numeriIseritiUtente=[];
+let numeroUtente;
+let somma= 0;
+ 
  //condizione per il quale i numeri verranno generati fino a quando non arriveranno a 5
  while(generatoreNumeriRandom.length < 5){
 
@@ -27,19 +30,23 @@ alert('i numeri da ricordare sono: ' + generatoreNumeriRandom);
 
 //creo una funzione con setTimeout
 setTimeout(function(){
-    let numeroUtente;
-    let somma= 0;
+    
     //apparirà un prompt per 5 volte che chiederà all'utente di inserire i numeri uno per volta 
     for (let i =0 ; i < 5; i++){
-numeroUtente=parseInt(prompt('Inserisci i numeri apparsi precedentemente'));
-   for (let j = 0; j < generatoreNumeriRandom.length; j++){
-
+    numeroUtente=parseInt(prompt('Inserisci i numeri apparsi precedentemente'));
+    for (let j = 0; j < generatoreNumeriRandom.length; j++){
     // se i numeri inseriti dall'utente sono uguali a quelli generati randomicamente allora verranno inseriti in un array specifico
-       if(generatoreNumeriRandom === numeroUtente){
+       if(generatoreNumeriRandom[j] == numeroUtente){
         numeriIseritiUtente.push(numeroUtente);
+        
+        //inserisco contatore per verificare quanti numeri ha indovinato
         somma +=1;
-       }
-   }
-}
+       
+        }
+    }
+    
+ }alert('Hai indovinato esattamente ' + somma + ' numeri! I numeri indovinati sono: '+ numeriIseritiUtente)
+},30000)
 
-})
+
+

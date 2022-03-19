@@ -37,7 +37,7 @@ numeroUtente=parseInt(prompt('Inserisci i numeri apparsi precedentemente'));
     // se i numeri inseriti dall'utente sono uguali a quelli generati randomicamente allora verranno inseriti in un array specifico
        if(generatoreNumeriRandom === numeroUtente){
         numeriIseritiUtente.push(numeroUtente);
-        
+        somma +=1;
        }
    }
 }

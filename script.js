@@ -14,17 +14,13 @@ function generateRandomNumber( min , max ) {
 
 
  //array vuoto nel quale verranno inseriti i numeri random 
- generatorePC=[];
+ generatoreNumeriRandom=[];
 
  //condizione per il quale i numeri verranno generati fino a quando non arriveranno a 5
- while(generatorePC.length < 5){
+ while(generatoreNumeriRandom.length < 5){
 
     //inserisco la funzione per generare randomicamente i numeri e li inserisco nel mio array vuoto tramite il push
-    generatorePC.push(generateRandomNumber(1,1000));
+    generatoreNumeriRandom.push(generateRandomNumber(1,100));
 }
+alert('i numeri da ricordare sono: ' + generatoreNumeriRandom);
 
-
-// alert che indicano all'utente l'azione da effettuare
-alert('Ricorda bene questi numeri: ' + generatorePC);
-alert('Ora attendi 30 secondi, dopodiché ti verranno chiesti i numeri appena visualizzati');
- 
